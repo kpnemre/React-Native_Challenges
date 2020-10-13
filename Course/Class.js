@@ -1,7 +1,7 @@
 import React from 'react';
 // import React, { Component } from 'react';
 
-import {SafeAreaView, View,StyleSheet, Text, Dimensions, ScrollView} from 'react-native';
+import {SafeAreaView, View,StyleSheet, Text, Dimensions, ScrollView,Button} from 'react-native';
 
 class App extends React.Component{
     constructor(props){
@@ -10,9 +10,27 @@ class App extends React.Component{
         this.state={
             count:0
         }
+        console.log("Constructor");
+    }
+    myFunction() {
+        let myVariable = 10;
+
+        myVariable++;
+
+        console.log("myFunction: " + myVariable);
     }
 
+
+    componentDidMount (){
+        console.log("Component Did Mount")
+        // API lardan başlangıçta veri çekmek için kullanılır
+    }
+
+
     render (){
+
+        console.log("Render class...")
+
         return(
             <SafeAreaView >
 
@@ -23,8 +41,15 @@ class App extends React.Component{
             onPress={()=>this.setState({
                 count: this.state.count +1
             })}/>
+
             {/* setState Component içinde tanımlı özel method*/}
             {/* this class yapısında functional da kullanılmaz */}
+
+
+            <Button
+                        title="Check"
+                        onPress={() => this.myFunction()}
+                    />
 
             
         </SafeAreaView>

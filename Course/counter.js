@@ -10,6 +10,8 @@ const App= (props) =>{
     // useState değişkene hafızada tutar
     const updateCounter = ()=>setCounter(counter +1)
 
+    console.log("Render component...")
+
     return (
 
         <SafeAreaView >
