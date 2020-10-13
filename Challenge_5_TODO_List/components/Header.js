@@ -1,8 +1,10 @@
 import React from 'react';
 import {SafeAreaView, View,StyleSheet, Text,Dimensions} from 'react-native';
 
-const Header = ()=>{
-const count = 0;
+const Header = (props)=>{
+
+
+
     return(
         <View style= {styles.header}>
 
@@ -11,7 +13,7 @@ const count = 0;
         </Text>
 
         <Text style={{color: '#ffa726',fontSize:50}}>
-            {count}
+            {props.count}
         </Text>
 
 
