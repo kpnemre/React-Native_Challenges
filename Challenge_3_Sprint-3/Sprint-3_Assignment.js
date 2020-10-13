@@ -19,8 +19,14 @@ const App = () => {
 
       <View style={styles.pinkbox}>
 
-      <Text style={styles.blackbox}>Black Box</Text>
-      <Text style={styles.brownbox}>Brown Box</Text>
+      <View style={styles.blackbox}>
+      <Text style={styles.blackbox2} >Black Box</Text>
+      </View>
+
+      <View style={styles.brownbox}>
+      <Text style={styles.brownbox2}>Brown Box</Text>
+      </View>
+      
 
 
       </View>
@@ -58,7 +64,7 @@ const styles = StyleSheet.create({
     },
     yellowbox: {
         backgroundColor: 'yellow', flex: 1,margin:30,
-        borderRadius: 100/2,
+        borderRadius: 60,
         width: 50,
         height: 50,
         textAlign:'center',
@@ -83,15 +89,34 @@ const styles = StyleSheet.create({
     },
     brownbox: {
         backgroundColor: '#a42a24', 
-        flex: 3,height:400,margin:20,
-        borderRadius: 50,
+        flex: 3,
+        height:400,
+        margin:20,
+        borderRadius: 100,
         textAlign:'center',
         color:'white',
         textAlign:'center',
         textAlignVertical:'center',
-        transform: [{ rotate: '270deg' }],
-        
 
     },
+    brownbox2: {
+
+      color:'white',
+      textAlign:'center',
+      textAlignVertical:'center',
+      flex:1,
+      transform: [{ rotate: '270deg'}],
+      
+
+  },
+  blackbox2: {
+
+    color:'white',
+    textAlign:'center',
+    textAlignVertical:'center',
+    flex:1
+
+
+},
   });
   
