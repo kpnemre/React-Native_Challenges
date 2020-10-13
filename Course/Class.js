@@ -6,14 +6,27 @@ import {SafeAreaView, View,StyleSheet, Text, Dimensions, ScrollView} from 'react
 class App extends React.Component{
     constructor(props){
         super(props)
+        
+        this.state={
+            count:0
+        }
     }
 
     render (){
         return(
             <SafeAreaView >
-                <View>
-                <Text>MERHABA</Text>
-                </View>
+
+            <Text style={{fontSize:200, textAlign:'center'}}>{this.state.count}</Text>
+
+            <Button 
+            title='UP!'
+            onPress={()=>this.setState({
+                count: this.state.count +1
+            })}/>
+            {/* setState Component içinde tanımlı özel method*/}
+            {/* this class yapısında functional da kullanılmaz */}
+
+            
         </SafeAreaView>
         )
     }
