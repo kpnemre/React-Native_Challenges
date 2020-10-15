@@ -4,7 +4,7 @@ import { TouchableOpacity, Text, StyleSheet, Dimensions } from 'react-native';
 const Button = () => {
 
     const [count, setCount] = useState(0);
-    const onPress = () => setCount(prevCount => prevCount + 1);
+    const onPress = () => setCount(count + 1);
     return (
 
         <TouchableOpacity style={styles.container}
