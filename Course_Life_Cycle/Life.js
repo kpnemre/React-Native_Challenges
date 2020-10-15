@@ -50,7 +50,6 @@ const App = (props) => {
                 </View>
 
                 <Button title="Giriş Yap" onPress={login} />
-                
                 <Button title="Temizle" onPress={() => {
                     setEmail("");
                     setPassword("");
