@@ -3,7 +3,7 @@ import {SafeAreaView, View,StyleSheet, Text,Dimensions} from 'react-native';
 
 import { Button } from './Button';
 
-const Header = (props)=>{
+const Header = ({ item })=>{
 
 
 
@@ -13,9 +13,9 @@ const Header = (props)=>{
         <Text style={{color: '#ffa726',fontSize:50}}>
             TODO 
         </Text>
-        {/* <Text style={{color: '#ffa726',fontSize:50}}>
-         {props.count}
-        </Text> */}
+        <Text style={{color: '#ffa726',fontSize:50}}>
+        { item }
+        </Text>
         </View>
     )
 

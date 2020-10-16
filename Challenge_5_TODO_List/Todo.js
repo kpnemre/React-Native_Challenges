@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import {SafeAreaView, View,StyleSheet, Text, Dimensions, ScrollView} from 'react-native';
+import {SafeAreaView, View,StyleSheet, Text,TouchableOpacity, Dimensions, ScrollView} from 'react-native';
 
 
 import { Header, Button, Input } from './components'
 
 const Todolist = () =>{
 
-
+    const [count, setCount] = useState(0);
+    const onPress = () => setCount(count + 1);
 
     return (
         <SafeAreaView style={styles.container}>
 
-            <Header> </Header>
+            <Header item={count}/>
             <ScrollView style= {styles.scroll}> 
 
            
@@ -22,7 +23,14 @@ const Todolist = () =>{
             <View style= {styles.addtodo}>
 
                 <Input />
-                <Button />
+
+                <TouchableOpacity style={styles.touch}
+                    onPress={onPress}
+                     >
+
+            <Text style={styles.text}>{count}</Text>
+            <Text style={styles.text}>ADD TODO</Text>
+            </TouchableOpacity>
  
             </View>
 
@@ -64,6 +72,18 @@ const styles = StyleSheet.create({
         // height:85,
         
     },
+    touch: {
+        backgroundColor: '#546E7A',
+        padding: 20,
+        width: Dimensions.get('window').width / 2,
+        alignSelf: 'center',
+        borderRadius: 10
+    },
+    text: {
+        fontWeight: 'bold',
+        color: 'white',
+        textAlign: 'center'
+    }
 
 
 })
