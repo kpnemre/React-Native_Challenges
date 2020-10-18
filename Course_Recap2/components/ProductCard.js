@@ -2,6 +2,19 @@ import React from 'react';
 import { View, Text, Image, Dimensions, StyleSheet } from 'react-native';
 
 const ProductCard = ({ product }) => {
+
+// const stockControl = ()=>{
+//     if (product.inStock === false ){
+//         return(
+//             'stokta yok'
+//         )
+//     }else{
+//         null
+//     }
+// }
+
+
+
     return (
         <View style={styles.container}>
             <Image
@@ -12,7 +25,17 @@ const ProductCard = ({ product }) => {
                 {/* <Text>{props.product.title}</Text> */}
                 <Text>{product.title}</Text>
                 <Text style={{ fontWeight:'bold' }}>{product.price}</Text>
+
+
+                {/* <View style={{flex:1}}>
+
+                <Text style={{ fontWeight:'bold' }}>{stockControl}</Text>
+
+                </View> */}
+
             </View>
+
+
 
         </View>
     )
@@ -32,5 +55,6 @@ const styles = StyleSheet.create({
     image: {
         height: Dimensions.get('window').height / 4,
         resizeMode: 'contain'
-    }
+    },
+
 })

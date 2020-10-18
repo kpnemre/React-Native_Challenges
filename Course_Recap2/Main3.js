@@ -41,7 +41,7 @@ const App = () => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
-                <Text style={styles.banner}>Clarushop</Text>
+                <Text style={styles.banner}>Techoshop</Text>
                 <View style={styles.searchBar}>
                     <TextInput
                         placeholder="Ürün ara..."
@@ -54,7 +54,7 @@ const App = () => {
                     // keyExtractor = {(item,index)=>index.toString()}
                     keyExtractor={(_, index) => index.toString()}
 
-                    data={productData}
+                    data={displayList}
                     // renderItem={(data.item) => <Text {data.item.title} />}
                     // renderItem= {({ item }) => <Text>{item.title}</Text>}
                     renderItem={renderListItem}
