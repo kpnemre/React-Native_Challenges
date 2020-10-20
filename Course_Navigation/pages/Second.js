@@ -1,14 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {SafeAreaView, View, Text, Alert,Button} from 'react-native';
 
 const Second = (props) => {
 
-    const userNumber=props.route.params.myNumber
+    console.log('Second');
+
+    const userValue=props.route.params.selectedValue;
   return (
     <SafeAreaView>
       <View >
         <Text style={{fontSize:40}}>Second</Text>
-  <Text style={{fontSize:40}}>{userNumber}</Text>
+  <Text style={{fontSize:40}}>{userValue}</Text>
         {/* <Button
           title="Go!"
           onPress={() => props.navigation.navigate('FirstPage')}
