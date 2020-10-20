@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { SafeAreaView, View, StyleSheet,
-  KeyboardAvoidingView, Text, TouchableOpacity, FlatList,} from 'react-native';
+import React, { useState} from 'react';
+import { Text, View, StyleSheet, SafeAreaView, FlatList,KeyboardAvoidingView } from 'react-native';
 
-import { main } from './styles';
 
-import { TodoInput, TodoCard } from './components'
+import {main} from './styles';
+import {TodoInput,TodoCard} from './components';
 
 
 
@@ -20,20 +19,21 @@ const Main = () => {
       isDone:false,
       // date:
     }
-    const newArray=[element, ...list];
+    const newArray=[...list,element];
     setList(newArray);
-    console.log(newArray);
+    // console.log(newArray);
   }
 
 
-  // const changeText = (text) => {
-  //   setEntry(text)
-  // }
 
-  // const addTodo = () => {
-  //   const todoElement = { text: entry }
-  //   setList([...todoList, todoElement])
-  // }
+const renderTodo = ({item})=>{
+  return (
+    <TodoCard data={ item } />
+  )
+}
+
+
+
 
   return (
     <SafeAreaView style={main.container}>
@@ -41,15 +41,18 @@ const Main = () => {
 
       <View style={main.banner}>
           <Text style={main.todoText}>TODO</Text>
-          <Text style={main.todoText}>10</Text>
-          {/* <Text style={main.todoCount}>{'Total:' + list.length}</Text> */}
+          {/* <Text style={main.todoText}>10</Text> */}
+          <Text style={main.todoCount}>{'Total:' + list.length}</Text>
           {/* <Text style={main.todoCount}>{'Remain:' +list.filter(t=>t.isDone===false).length}</Text> */}
         </View>
 
-        <FlatList 
-        data={list}
-        renderItem={(data)=> <Text>{data.item.todo}</Text> }
-        
+        <FlatList
+        keyExtractor={(item, index)=> index.toString}
+          data= {list}
+          // renderItem={(data)=> <Text>{data.item.todo}</Text>}
+          renderItem={renderTodo}
+          // ListEmptyComponent={() => <Text style={main.emptyComponent}>Nothing to do..</Text>}
+
         />
         <TodoInput
           onTodoEnter={(textInput)=> addTodo(textInput)}
