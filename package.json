@@ -15,8 +15,11 @@
     "@react-navigation/stack": "^5.9.3",
     "react": "16.13.1",
     "react-native": "0.63.3",
+    "react-native-axios": "^0.17.1",
     "react-native-gesture-handler": "^1.8.0",
+    "react-native-get-location": "^1.4.3",
     "react-native-reanimated": "^1.13.1",
+    "react-native-router-flux": "^4.2.0",
     "react-native-safe-area-context": "^3.1.8",
     "react-native-screens": "^2.11.0"
   },
