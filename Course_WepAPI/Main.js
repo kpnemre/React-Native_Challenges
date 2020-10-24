@@ -57,7 +57,7 @@ const Main = (props) => {
       <View>
         <Text>Main</Text>
         <Button title="Fetch Data Then" onPress={fetchData_Then} />
-        <Text></Text>
+<Text></Text>
         <Button title="Fetch Data Await" onPress={fetchData_Await} />
       </View>
     </SafeAreaView>

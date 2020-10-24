@@ -13,22 +13,14 @@ import axios from 'axios';
 
 const Main = (props) => {
 
-    const[userData, setUserData] = useState([]);
+const[userData, setUserData] = useState([]);
 
-  const fetchData_Then = () => {
-
-//     const {data} =  axios.get(
-//         'https://jsonplaceholder.typicode.com/users',
-//       );
-//   setUserData(data);
-
-    axios.get('https://jsonplaceholder.typicode.com/users').then((response) => {
-    //   setUserData(response.data)
-    
-    setUserData(response.data); 
-    console.log(response.data);
-    })
-  }
+const fetchData_Then = () => {
+        axios.get('https://jsonplaceholder.typicode.com/users')
+            .then(({ data }) => {
+                setUserData(data);
+            })
+    }
 
   const fetchData_Await = async () => {
     const {data} = await axios.get(
