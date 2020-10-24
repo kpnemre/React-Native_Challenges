@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Timeline, Post, Friends} from './pages';
 
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -38,9 +39,15 @@ function Router() {
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName="MainPage"
+        // backBehavior='history'
         lazy={false}
         //   lazy false iki sayfayı birden render eder
-        tabBarOptions={{activeTintColor: 'purple'}}>
+        tabBarOptions={{activeTintColor: 'red'}}
+        
+        
+        // tabBarOptions={{activeBackgroundColor:'gray'}}
+
+        >
         <Tab.Screen
           name="MainPage"
           component={MainComponent}
