@@ -1,41 +1,34 @@
-
-
-import  React from 'react';
-import { View, Text,SafeAreaView } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import {CityList, RestaurantDetail,ReastaurantList} from './pages' 
-
-
 const Stack = createStackNavigator();
 
-function Router () {
+import { CityList, RestaurantDetail, RestaurantList } from './pages'
 
+const Router = () => {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    name="Cities"
+                    component={CityList}
+                    options={{ headerShown: true }}
+                />
+                <Stack.Screen
+                    name="Restaurants"
+                    component={RestaurantList}
+                    options={{ headerShown: true }}
 
-    // console.log('Router');
-
-  return (
-    <NavigationContainer>
-
-      <Stack.Navigator 
-    //   initialRouteName='SecondPage'
-      screenOptions={
-        {  headerShown:false,
-            gestureEnabled:true}
-    
-    }
-    >
-        <Stack.Screen name="Cities"
-         component={CityList}
-          options={{ title: 'Gönderiler' }} />
-
-        <Stack.Screen name="Reastaurants" component={ReastaurantList} />
-        <Stack.Screen name="Details" component={RestaurantDetail} />
-
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+                />
+                <Stack.Screen
+                    name="Details"
+                    component={RestaurantDetail}
+                    options={{ headerShown: true }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+};
 
 export default Router;

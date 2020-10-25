@@ -18,14 +18,16 @@ const CityList = (props) => {
 
   // async-await
   const fetchCityData = async () => {
-    const {data} = await axios.get(
-      'https://opentable.herokuapp.com/api/cities',
-    );
+    const { data } = await axios.get("https://opentable.herokuapp.com/api/cities");
+
     // setCityList(response.data.cities);
     setCityList(data.cities);
     // setOriginalList(data.cities);
     originalList = [...data.cities];
   };
+
+
+
 
   // then cath
   // const fetchCityData = () => {
@@ -37,7 +39,14 @@ const CityList = (props) => {
     fetchCityData();
   }, []);
 
-  const renderCities = ({item}) => <CityItem cityName={item} />;
+  const renderCities = ({item}) => {
+  return (
+    <CityItem 
+    cityName={item}
+    onSelect = {()=>props.navigation.navigate('Restaurants', {SelectedCity:item})}
+    />
+  ) }
+
   const renderSeperator = () => (
     <View style={{borderWidth: 1, borderColor: '#e0e0e0'}} />
   );
@@ -48,7 +57,8 @@ const CityList = (props) => {
         const cityName = city.toUpperCase();
         return cityName.indexOf(text) > -1;
     })
-    setOriginalList(filteredCities);
+    // setOriginalList(filteredCities);
+    setCityList(filteredCities);
   }
 
 
@@ -72,4 +82,4 @@ const CityList = (props) => {
   );
 };
 
-export {CityList};
+export {CityList}
