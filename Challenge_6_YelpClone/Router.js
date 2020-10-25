@@ -1,29 +1,23 @@
 
 
-import * as React from 'react';
-import { View, Text } from 'react-native';
+import  React from 'react';
+import { View, Text,SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-// function HomeScreen() {
-//   return (
-//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//       <Text>Home Screen</Text>
-//     </View>
-//   );
-// }
-
-
-// import First from './pages/First';
-// import Second from './pages/Second';
+import {CityList, RestaurantDetail,ReastaurantList} from './pages' 
 
 
 const Stack = createStackNavigator();
 
 function Router () {
-    console.log('Router');
+
+
+    // console.log('Router');
+
   return (
     <NavigationContainer>
+
       <Stack.Navigator 
     //   initialRouteName='SecondPage'
       screenOptions={
@@ -32,11 +26,12 @@ function Router () {
     
     }
     >
-        <Stack.Screen name="FirstPage"
-         component={First}
+        <Stack.Screen name="Cities"
+         component={CityList}
           options={{ title: 'Gönderiler' }} />
 
-        <Stack.Screen name="SecondPage" component={Second} />
+        <Stack.Screen name="Reastaurants" component={ReastaurantList} />
+        <Stack.Screen name="Details" component={RestaurantDetail} />
 
       </Stack.Navigator>
     </NavigationContainer>
