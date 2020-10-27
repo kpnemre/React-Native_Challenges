@@ -9,7 +9,11 @@ import { CityList, RestaurantDetail, RestaurantList } from './pages'
 const Router = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+              <Stack.Navigator
+        screenOptions={{
+          gestureEnabled: true,
+        //   headerShown: false,
+        }}>
                 <Stack.Screen
                     name="Cities"
                     component={CityList}

@@ -1,15 +1,15 @@
 import axios from 'axios';
-import React, {useState, useEffect} from 'react';
-import {SafeAreaView, Text, View, FlatList} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { SafeAreaView, View, Text, FlatList, ActivityIndicator } from 'react-native';
 
-import {CityItem, SearchBar} from '../components';
+import { CityItem, SearchBar } from '../components'
 
-
-
-
-let originalList= [];
+let originalList = [];
 
 const CityList = (props) => {
+
+  const [isLoading, setLoading] = useState(true);
+
 
   const [cityList, setCityList] = useState([]);
 
@@ -24,6 +24,7 @@ const CityList = (props) => {
     setCityList(data.cities);
     // setOriginalList(data.cities);
     originalList = [...data.cities];
+    setLoading(false);
   };
 
 
@@ -43,7 +44,7 @@ const CityList = (props) => {
   return (
     <CityItem 
     cityName={item}
-    onSelect = {()=>props.navigation.navigate('Restaurants', {SelectedCity:item})}
+    onSelect = {()=>props.navigation.navigate('Restaurants', {selectedCity:item})}
     />
   ) }
 
@@ -66,20 +67,30 @@ const CityList = (props) => {
   return (
     <SafeAreaView>
       <View>
+      <Text style={{ margin: 5, fontWeight: 'bold', fontSize: 30 }}>Cities</Text>
         <SearchBar
           placeholder="Bir şehir arayın"
         //   onSearch={(value) => console.log(value)}
           onSearch={(value) => searchCity(value)}
         />
-        <FlatList
-          keyExtractor={(_, index) => index.toString}
-          data={cityList}
-          renderItem={renderCities}
-          ItemSeparatorComponent={renderSeperator}
-        />
+
+                  {
+                    isLoading ?
+                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                            <ActivityIndicator size='large' color='red'/>
+                        </View>
+                        :
+                        <FlatList
+                        keyExtractor={(_, index) => index.toString()}
+                        data={cityList}
+                        renderItem={renderCities}
+                        ItemSeparatorComponent={renderSeperator}
+                      />
+                }
+   
       </View>
     </SafeAreaView>
   );
 };
 
-export {CityList}
+export {CityList};

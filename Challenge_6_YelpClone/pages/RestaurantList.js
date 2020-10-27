@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, View, Text, FlatList } from 'react-native';
+import { SafeAreaView, View, Text, FlatList, ActivityIndicator} from 'react-native';
 import { RestaurantItem, SearchBar } from '../components';
 
 let originalList = [];
 
 const RestaurantList = (props) => {
+    const [isLoading, setLoading] = useState(true);
+
     const [restaurantList, setRestaurantList] = useState([]);
     const { selectedCity } = props.route.params;
 
@@ -21,7 +23,10 @@ const RestaurantList = (props) => {
             .then(response => {
                 setRestaurantList(response.data.restaurants);
                 originalList = [...response.data.restaurants];
-            })
+                setLoading(false);
+            });
+           
+          
     }
 
     useEffect(() => {
@@ -58,11 +63,19 @@ const RestaurantList = (props) => {
                         onSearch={(value) => searchRestaurant(value)}
                     />
                 </View>
-                <FlatList
-                    keyExtractor={(_, index) => index.toString()}
-                    data={restaurantList}
-                    renderItem={renderRestaurants}
-                />
+                {
+                    isLoading ?
+                        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                            <ActivityIndicator size='large' color='red'/>
+                        </View>
+                        :
+                        <FlatList
+                        keyExtractor={(_, index) => index.toString()}
+                        data={restaurantList}
+                        renderItem={renderRestaurants}
+                    />
+                }
+           
             </View>
         </SafeAreaView>
     )
