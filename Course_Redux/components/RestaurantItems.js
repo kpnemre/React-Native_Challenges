@@ -1,14 +1,31 @@
-import React, {useEffect, useState} from 'react';
-import { SafeAreaView,View,Text, FlatList, TouchableOpacity } from "react-native";
-import { Restaurants } from '../pages';
-
-
-const RestaurantItem =({ item }) =>{
-
+import React from 'react';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
+const RestaurantItem = ({ item, onAddFavorite }) => {
     return (
-   <View style= {{flex:1, borderColor:'red'}} >
-       <Text style= {{fontSize:10, color:'red'}}>{item.name}</Text>
-   </View>
+        <TouchableOpacity 
+        style={styles.container}
+        onPress={onAddFavorite}>
+            <Icon name={'fire'} size={20} color={'red'} />
+            <Text style={styles.text}>{item.name}</Text>
+        </TouchableOpacity>
+   
     )
 }
-export {RestaurantItem};
+
+export { RestaurantItem }
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 10,
+        margin: 5,
+        borderRadius: 5,
+        flexDirection:'row',
+        alignItems:'center',
+        
+    },
+    text: {
+        fontWeight: '200',
+        marginLeft:10
+    }
+})
