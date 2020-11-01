@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "637101942782",
+    "firebase_url": "https://fir-c7dce.firebaseio.com",
+    "project_id": "fir-c7dce",
+    "storage_bucket": "fir-c7dce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637101942782:android:357d3bc0174098965a42af",
+        "android_client_info": {
+          "package_name": "com.react_native_challenes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637101942782-pf9rs1u18hpvi7299mivc10rshg0l7qm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGk56AImjusDGTmA2X2IopXJ4yI6aVrq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637101942782-pf9rs1u18hpvi7299mivc10rshg0l7qm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

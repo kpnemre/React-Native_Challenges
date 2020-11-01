@@ -3,7 +3,7 @@
  */
 import 'react-native-gesture-handler';
 import {AppRegistry} from 'react-native';
-import Router from './Course_Redux/Router';
+import LoginPage from './Course_Firebase_LoginPage/LoginPage';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Router);
+AppRegistry.registerComponent(appName, () => LoginPage);
