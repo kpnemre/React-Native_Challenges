@@ -1,2 +1,3 @@
-export * from './MainTabScreen';
-export * from './DrawerContent';
+
+export * from './HomeScreen';
+export * from './DetailsScreen';
