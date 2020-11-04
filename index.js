@@ -3,10 +3,10 @@
  */
 import 'react-native-gesture-handler';
 import {AppRegistry} from 'react-native';
-import App from './Course_Drawer_Nav/Main';
+import Router from './Challenge_Job/Router';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => Router);
 
 
 // cd android && gradlew clean && cd ..
