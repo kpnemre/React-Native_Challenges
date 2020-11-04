@@ -5,22 +5,31 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 // import Icon from 'react-native-vector-icons/Ionicons';
-import { MainTabScreen} from './pages';
+import { MainTabScreen, DrawerContent, SupportScreen, SettingsScreen, BookmarkScreen} from './pages';
 
 
 
 const Drawer = createDrawerNavigator();
 
 export default function App() {
+
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+
+      {/* <Drawer.Navigator initialRouteName="Home"> */}
+
+  <Drawer.Navigator  drawerContent={props => <DrawerContent {...props} />}>
+
+      
         {/* 
         <Drawer.Screen name="Home" component={HomeStackScreen} />
         <Drawer.Screen name="Details" component={DetailsStackScreen} />
          */}
 
-        <Drawer.Screen name="Home" component={MainTabScreen} />
+        <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
+        <Drawer.Screen name="SupportScreen" component={SupportScreen} />
+        <Drawer.Screen name="SettingScreen" component={SettingsScreen} />
+        <Drawer.Screen name="BookmarkScreen" component={BookmarkScreen} />
 
       </Drawer.Navigator>
     </NavigationContainer>
