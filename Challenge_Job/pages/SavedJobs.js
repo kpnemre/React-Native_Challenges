@@ -12,13 +12,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-const Jobs =props=>{
+const SavedJobs =props=>{
 <SafeAreaView>
     <View>
-        <Text>jobs</Text>
+        <Text>SavedJobs</Text>
     </View>
 </SafeAreaView>
 }
 
-export {Jobs};
+export {SavedJobs};
 
