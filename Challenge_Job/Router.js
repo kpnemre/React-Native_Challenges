@@ -15,6 +15,7 @@ const Router=()=> {
         <Stack.Screen name="Home" component={Inroduction} />
         <Stack.Screen name="Home" component={Jobs} />
         <Stack.Screen name="Home" component={SavedJobs} />
+        <Stack.Screen name="Home" component={SavedJobs} />
       </Stack.Navigator>
     </NavigationContainer>
   );
