@@ -135,6 +135,19 @@ const DrawerContent = (props) => {
             <DrawerItem 
                 icon={({color, size}) => (
                     <Icon 
+                    name="sign-in" 
+                    color={color}
+                    size={size}
+                    />
+                )}
+                label="Sign In"
+                onPress={() => {signOut()}}
+            />
+        </Drawer.Section>
+        <Drawer.Section style={styles.bottomDrawerSection}>
+            <DrawerItem 
+                icon={({color, size}) => (
+                    <Icon 
                     name="sign-out" 
                     color={color}
                     size={size}
@@ -144,6 +157,7 @@ const DrawerContent = (props) => {
                 onPress={() => {signOut()}}
             />
         </Drawer.Section>
+        
     </View>
 );
 };
