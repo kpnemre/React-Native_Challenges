@@ -15,6 +15,8 @@ function HomeStackScreen({navigation}) {
         headerStyle: {
           backgroundColor: '#009387',
         },
+        headerShown: false,
+        gestureEnabled: true,
         headerTintColor: '#fff',
         headerTitleStyle: {
           fontWeight: 'bold',
@@ -24,6 +26,8 @@ function HomeStackScreen({navigation}) {
         name="Home"
         component={HomeScreen}
         options={{
+        headerTintColor: '#fff',
+
           headerLeft: () => (
             <Icon.Button
               name="align-justify"

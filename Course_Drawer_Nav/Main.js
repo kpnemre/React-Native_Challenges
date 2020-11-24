@@ -18,7 +18,14 @@ export default function App() {
 
       {/* <Drawer.Navigator initialRouteName="Home"> */}
 
-  <Drawer.Navigator  drawerContent={props => <DrawerContent {...props} />}>
+  <Drawer.Navigator 
+   drawerContent={props => <DrawerContent {...props} />} 
+   drawerType={'slide'}
+  //  hideStatusBar={true}
+   drawerStyle={{
+    backgroundColor: '#79c7bb',
+    width: 250,
+  }}>
 
       
         {/* 
