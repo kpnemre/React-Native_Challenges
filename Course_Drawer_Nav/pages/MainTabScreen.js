@@ -15,8 +15,8 @@ function HomeStackScreen({navigation}) {
         headerStyle: {
           backgroundColor: '#009387',
         },
-        headerShown: false,
-        gestureEnabled: true,
+        // headerShown: false,
+        // gestureEnabled: true,
         headerTintColor: '#fff',
         headerTitleStyle: {
           fontWeight: 'bold',
@@ -81,7 +81,7 @@ const MainTabScreen = ()=>{
 return (
   <Tab.Navigator
   initialRouteName="Home"
-  activeColor="#FFF"
+  activeColor="#fff"
   
 >
   <Tab.Screen

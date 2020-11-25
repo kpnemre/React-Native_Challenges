@@ -5,7 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 const SettingsScreen = ()=>{
     return (
         <View>
-            <Text>Bookmark</Text>
+            <Text>Settig Screen</Text>
             <Button
             title="Go to details screen...again"
             onPress={() => alert("Details")}
